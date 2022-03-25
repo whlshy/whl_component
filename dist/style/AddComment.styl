@@ -1,0 +1,117 @@
+.whl_addcomment {
+    font-family: Verdana, sans-serif;
+    font-size: 15px;
+    line-height: 1.5;
+    display: flex;
+
+    .comment_wrapper {
+        display: flex;
+        flex-direction: column;
+        flex: 1 1;
+    }
+
+    .show_avatar {
+        margin-left: 16px;
+    }
+
+    .addcomment {
+        line-height: 1.5;
+        border-color: #878787;
+        border-style: solid;
+        border-top-width: 0px;
+        border-right-width: 0px;
+        border-bottom-width: 1px;
+        border-left-width: 0px;
+        padding-bottom: 0px;
+        padding: 0 1px;
+        margin-bottom: 1px;
+        background: transparent;
+        font-size: 14px;
+        overflow: hidden;
+        resize: none;
+        white-space: pre-wrap;
+        cursor: text;
+        word-break: break-all;
+
+        &:focus {
+            outline: none;
+            border-bottom-width: 2px;
+            // padding-bottom: 0px;
+            margin-bottom: 0px;
+            border-color: #333333;
+        }
+    }
+
+    .tag_name {
+        color: #065fd4;
+        background-color: rgba(0, 0, 0, 0.05);
+        pointer-events: none;
+        text-decoration: none;
+        display: inline-block;
+        border-radius: 0.2em;
+        user-select: none;
+    }
+
+    .addcomment:empty::before {
+        content: attr(aria-label);
+        display: block;
+        height: 100%;
+        font-size: 14px;
+        color: #757575;
+        font-family: Verdana, sans-serif;
+    }
+
+    .addcommentbtn {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 8px;
+
+        >div {
+            display: flex;
+
+            >div {
+                // width: 72px;
+                // height: 40px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border-radius: 3px;
+                // padding: 9px 16px;
+                margin-left: 8px;
+                user-select: none;
+
+                >span {
+                    font-size: 14px;
+                    // padding: 0 6px;
+                    padding: 9px 22px;
+                }
+            }
+        }
+
+        .ctcancel {
+            color: #666666;
+
+            :hover {
+                background-color: #e5e5e5;
+            }
+        }
+
+        .ctsubmit {
+            color: #ffffff;
+        }
+
+        .nosubmit {
+            background-color: #cccccc;
+            border-radius: 3px;
+        }
+
+        .yessubmit {
+            background-color: #065fd4;
+
+            :hover {
+                background-color: #0557c5;
+                border-radius: 3px;
+            }
+        }
+    }
+}

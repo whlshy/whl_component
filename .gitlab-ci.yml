@@ -1,0 +1,13 @@
+pages:
+  cache:
+    paths:
+      - node_modules
+  script:
+    - npm install 
+    - npm run styleguide:build
+    - mv styleguide public 
+  artifacts:
+    paths:
+      - public
+  only:
+    - master

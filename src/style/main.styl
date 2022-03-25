@@ -1,0 +1,106 @@
+@import './Pagination';
+
+.posts-wrapper
+	> *
+		border-bottom: 1px dashed #c5c5c5;
+		>span:first-child
+			margin-right: 16px
+			color: #373737
+		>*:nth-child(2):hover
+			color: #0076ec
+		&:hover
+			background-color: #e9e9e9;
+
+.page
+	margin 0 4px 1px;
+	
+
+.page-pd
+	margin 0 4px 1px;
+
+.color-blue
+	color: #0076ec;
+	&:hover
+		margin-bottom: 0px;
+		border-bottom: 1px solid #0076ec;
+
+.pointer
+	cursor: pointer;
+	user-select: none;
+
+setPdMg($padding = null, $margin = null){
+	if($padding != null){
+		padding: $padding;
+	}
+	if($margin != null){
+		margin: $margin;
+	}
+}
+
+.padding-8-16
+	setPdMg(8px 16px, null)
+
+dflex($align = center, $content = flex-start){
+	display: flex;
+	align-items: $align;
+	justify-content: $content;
+}
+
+.dflex-c-c
+	dflex(center, center)
+.dflex-c-b
+	dflex(center, space-between)
+.dflex-c-e
+	dflex(center, flex-end)
+
+.style-none
+	text-decoration: none;
+
+maxLine($number = 1) {
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-line-clamp: $number;
+	-webkit-box-orient: vertical;
+	white-space: normal;
+}
+
+.oneline
+	maxLine(1)
+
+flex($num1, $num2){
+    flex: $num1 $num2 auto;
+}
+
+.flex-1-1
+	flex(1, 1)
+
+.hr0
+	border: 0;
+	border-top: 1px solid #c5c5c5;
+
+.whl_google-btn
+	border-radius: 50%;
+	background-color: inherit;
+	dflex(center, center)
+	border none;
+	> span
+		user-select: none
+
+.whl_google-btn-select
+	cursor: pointer;
+	user-select none;
+	&:hover
+		background-color: #ccc !important;
+		> span
+			color: #000 !important;
+	&:active
+		background-color: #c4c4c4 !important;
+
+.whl_textarea
+	width: 100%;
+	resize: none;
+	padding: 5px 8px;
+	box-sizing: border-box;
+

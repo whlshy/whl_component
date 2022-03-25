@@ -1,0 +1,36 @@
+.whl_pagination {
+	display: flex;
+	align-items: center;
+
+	& > *:not(:first-child) {
+		margin-left: 12px;
+	}
+
+	.buttonStyle {
+		width: 32px;
+		height: 32px;
+		border-radius: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		cursor: pointer;
+		transition: background 0.2s ease-in-out;
+		user-select: none;
+
+		&:hover {
+			color: #222;
+			background: #0000000a;
+			transition: background 0.2s ease-in-out;
+		}
+	}
+	.ellipsisStyle {
+		width: 32px;
+		height: 32px;
+		border-radius: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		user-select: none;
+	}
+}
+

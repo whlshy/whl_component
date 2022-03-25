@@ -1,0 +1,13 @@
+{
+  "presets": ["@babel/env", "@babel/preset-react",
+    [
+      "babel-preset-minify",
+      {
+        "builtIns": false
+      }
+    ]],
+  "comments": false,
+  "plugins": [
+    "@babel/plugin-proposal-class-properties"
+  ]
+}

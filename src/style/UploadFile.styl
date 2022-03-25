@@ -1,0 +1,58 @@
+.whl_uploadfile
+  border: 1px solid #000;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  background-color #fff;
+
+  > *
+    padding 6px;
+
+  .whl_flex-s-c
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+  .whl_bottom_split
+    border-bottom: 1px solid #000;
+
+  .whl_uploadfile_body
+    flex 1 1 auto;
+    overflow: auto;
+  
+  .whl_upload_btn_wrapper
+    border: 2px solid #eee;
+    border-style: dashed
+    border-color: #b1acf3;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    cursor pointer;
+    transition: border-color 0.2s ease-in-out;
+    position relative
+    margin: 6px 0;
+    
+    &:hover
+      border-color: #4053ca;
+    
+  .whl_hidden_input
+    position: absolute;
+    top 0
+    right: 0
+    left: 0
+    bottom 0;
+    opacity 0;
+
+  .whl_file_items
+    flex-direction: row;
+    align-items: flex-end;
+    transition: color 0.2s ease-in-out;
+    &:hover
+      color: blue
+
+    .full_ellipsis
+      border-bottom: 1px dotted #bdbaba;
+      flex 1 1 auto;
+      height: 100%;

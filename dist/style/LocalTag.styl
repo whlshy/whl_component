@@ -1,0 +1,115 @@
+@import 'GoogleIcon.css';
+
+.collectiontag {
+    // display: flex;
+    // background-color: #f9f9f9;
+    // position: sticky;
+    top: 0;
+    z-index: 1;
+
+    // display: flex;
+    // justify-content: center;
+    .storagetab {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: nowrap;
+
+        .tab {
+            display: flex;
+            overflow: auto;
+            flex: 1 1 auto;
+            margin-right: 16px;
+            border-bottom: 1px solid #666666;
+        }
+    }
+
+    .flex {
+        display: flex;
+    }
+
+    .align-items {
+        display: flex;
+        align-items: center;
+    }
+
+    .updown {
+        height: 25px;
+        border-radius: 50%;
+        border: 1px solid #333333;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        img {
+            height: 20px;
+            width: 23px;
+        }
+    }
+
+    .ctags {
+        background-color: #ffd6ac;
+        margin: 4px 0 0 8px;
+        padding: 2px 6px;
+        border-radius: 20px;
+        border: 1px solid #999999;
+    }
+
+    .pointer {
+        cursor: pointer;
+        user-select: none;
+    }
+
+    .alltags {
+        padding-top: 4px;
+        flex-wrap: wrap;
+    }
+
+    .cselect {
+        background-color: #98f385;
+    }
+
+    .ltags {
+        display: flex;
+        padding: 4px 8px;
+        border-top: 1px solid #666666;
+        border-left: 1px solid #666666;
+        border-right: 1px solid #666666;
+        border-radius: 10px 10px 0 0;
+        justify-content: space-between;
+        width: 100px;
+        position: relative;
+    }
+
+    .tabselect {
+        background-color: #bbf7c4;
+    }
+
+    .ltagcover {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        height: 100%;
+        width: 100%;
+    }
+
+    .oneline {
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        -webkit-line-clamp: 1;
+        -webkit-box-orient: vertical;
+    }
+
+    .relative {
+        position: relative;
+    }
+
+    .close {
+        font-size: 16px;
+    }
+
+    .add {
+        font-size: 18px;
+    }
+}

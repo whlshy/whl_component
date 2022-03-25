@@ -1,0 +1,47 @@
+{
+  "name": "whl_component",
+  "version": "2.0.1",
+  "description": "",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "babel": "babel src  --out-dir dist",
+    "build": "npm run babel && npm run styleguide:build ",
+    "start": "styleguidist server",
+    "styleguide": "styleguidist server",
+    "styleguide:build": "styleguidist build"
+  },
+  "keywords": [],
+  "author": "WHL",
+  "private": true,
+  "license": "ISC",
+  "dependencies": {
+    "html-react-parser": "^1.2.7",
+    "install": "^0.13.0",
+    "prop-types": "^15.6.1",
+    "react": "^16.14.0",
+    "react-css-modules": "^4.7.11",
+    "react-dom": "^16.14.0",
+    "react-router": "^5.2.0",
+    "react-router-dom": "^5.2.0",
+    "stylus": "^0.54.8",
+    "stylus-loader": "^3.0.2",
+    "url-loader": "^4.1.1"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.12.10",
+    "@babel/core": "^7.12.10",
+    "@babel/plugin-proposal-class-properties": "^7.12.1",
+    "@babel/preset-env": "^7.14.7",
+    "@babel/preset-react": "^7.12.10",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^8.2.2",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-minify": "^0.5.0-alpha.9",
+    "css-loader": "^3.6.0",
+    "react-styleguidist": "^11.1.5",
+    "style-loader": "^1.3.0",
+    "webpack": "^4.44.2",
+    "webpack-cli": "^4.7.2"
+  }
+}
