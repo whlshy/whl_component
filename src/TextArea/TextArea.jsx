@@ -26,7 +26,7 @@ function TextArea(props) {
 
   useEffect(() => {
     autoGrow(ref.current);
-    onChange(text)
+    value != text && onChange(text)
   }, [text])
 
   useEffect(() => {
@@ -61,7 +61,7 @@ TextArea.propTypes = {
 
 TextArea.defaultProps = {
   value: "",
-  onChange: (text) => { },
+  onChange: (text) => { console.log(text) },
   style: {},
   className: "whl_textarea",
   placeholder: "placeholder",

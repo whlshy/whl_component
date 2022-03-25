@@ -4,7 +4,8 @@ import styles from '../style/Album.styl'
 import GoogleBtn from '../GoogleBtn/GoogleBtn'
 
 function Album(props) {
-	const { imgs, minWidth, photoMargin, clickPhoto, LightBox, bgColor, draggable, showDes, onChange, coverComponent, isEdit, starindex, setStar, imgDel } = props;
+	const { imgs, minWidth, photoMargin, clickPhoto, LightBox, bgColor, draggable, showDes,
+		onChange, coverComponent, isEdit, starindex, setStar, imgDel } = props;
 
 	const [width, setWidth] = useState(0);
 	const [count, setCount] = useState(0);
