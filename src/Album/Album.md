@@ -69,7 +69,9 @@ let photos = [
 <>
   {!!component && component}
   <Album
+    isEdit={false}
     imgs={imgs}
+    starindex={0}
     // LightBox={component}
     clickPhoto={(m, index) =>
       setComponent(
