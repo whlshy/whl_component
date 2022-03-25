@@ -1,9 +1,10 @@
 import React, { useEffect, useState, useRef, Fragment } from 'react';
 import PropTypes from 'prop-types';
 import styles from '../style/Album.styl'
+import GoogleBtn from '../GoogleBtn/GoogleBtn'
 
 function Album(props) {
-	const { imgs, minWidth, photoMargin, clickPhoto, LightBox, bgColor, draggable, showDes, onChange, coverComponent } = props;
+	const { imgs, minWidth, photoMargin, clickPhoto, LightBox, bgColor, draggable, showDes, onChange, coverComponent, isEdit, starindex, setStar, imgDel } = props;
 
 	const [width, setWidth] = useState(0);
 	const [count, setCount] = useState(0);
@@ -90,6 +91,10 @@ function Album(props) {
 							onDragEnter={onDragEnter}
 							onDragLeave={onDragLeave}
 							coverComponent={coverComponent}
+							isEdit={isEdit}
+							starindex={starindex}
+							setStar={setStar}
+							imgDel={imgDel}
 						/>
 					)
 				}
@@ -111,6 +116,14 @@ Album.propTypes = {
 	bgColor: PropTypes.string,
 	/** 可額外加入自定義 component*/
 	coverComponent: PropTypes.node,
+	/** */
+	isEdit: PropTypes.bool,
+	/** */
+	starindex: PropTypes.number,
+	/** */
+	setStar: PropTypes.func,
+	/** */
+	imgDel: PropTypes.func,
 }
 
 Album.defaultProps = {
@@ -121,14 +134,18 @@ Album.defaultProps = {
 	bgColor: "#000",
 	draggable: false,
 	showDes: true,
+	isEdit: false,
 	coverComponent: null,
+	starindex: 0,
+	setStar: (index) => { console.log('setStar', index) },
+	imgDel: (index) => { console.log('imgDel', index) }
 }
 
 export default Album;
 
 export function Image(props) {
 	const { width, count, photoMargin, data, imgs_length, index, bgColor, clickPhoto, showDes,
-		draggable, onDragStart, onDragEnd, onDragEnter, onDragLeave, coverComponent } = props;
+		draggable, onDragStart, onDragEnd, onDragEnter, onDragLeave, coverComponent, isEdit, starindex, setStar, imgDel } = props;
 	const [imgWH, setImgWH] = useState({ width: null, height: null }); // image width and height
 	const [onHover, setHover] = useState(false);
 
@@ -142,10 +159,9 @@ export function Image(props) {
 		e.stopPropagation()
 		return false
 	}
-
 	return (
 		<div
-			className="whl_relative"
+			className="whl_relative whl_album"
 			style={{
 				width: `${width}px`, height: `${width}px`, marginRight: (index + 1) % count == 0 ? "0px" : `${photoMargin}px`,
 				marginBottom: Math.ceil(imgs_length / count) - 1 != parseInt(index / count) ? `${photoMargin}px` : "0px", overflow: "hidden",
@@ -196,9 +212,23 @@ export function Image(props) {
 				onDragLeave={e => onDragLeave(index)}
 				onDragOver={e => draggable && cancelDefault(e)}
 			/>
-			{
-				!!coverComponent && coverComponent
+			{isEdit &&
+				<div className='whl_img_edit_container'>
+
+					<span className={`material-icons-outlined whl_img_edit_star ${starindex == index && 'whl_img_edit_star_active'}`}
+						onClick={e => setStar(index)}>
+						star
+					</span>
+
+					<span className="material-icons-outlined whl_img_edit_del" onClick={e => imgDel(index)}>
+						close
+					</span>
+
+					{/* <GoogleBtn str='star'></GoogleBtn>
+			<GoogleBtn str='close'></GoogleBtn> */}
+				</div>
 			}
+
 		</div>
 	);
 }
