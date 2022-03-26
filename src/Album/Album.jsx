@@ -53,7 +53,7 @@ function Album(props) {
 			}
 			!onChange && console.log('onChange', startIdx, endIdx, newimgs)
 			onChange(startIdx, endIdx, newimgs)
-			setStar(endIdx)
+			starindex == startIdx && setStar(endIdx)
 		}
 		setStartIdx(null);
 		setEndIdx(null);
