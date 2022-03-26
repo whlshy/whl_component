@@ -149,6 +149,7 @@ const [imgs, setImgs] = useState([
     date: "2019-12-14, 週六",
   },
 ]);
+const [star, setStar] = useState(0);
 
 let photos = [
   { src: "https://i.imgur.com/60iYdXl.jpg" },
@@ -181,6 +182,9 @@ let photos = [
     draggable={true}
     showDes={false}
     onChange={(startIdx, endIdx, newimgs) => setImgs(newimgs)}
+    starindex={star}
+    setStar={index => setStar(index)}
+    isEdit={true}
   />
 </>;
 ```
