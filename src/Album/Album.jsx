@@ -49,11 +49,12 @@ function Album(props) {
 		if (startIdx != null && endIdx != null) {
 			let newimgs = [];
 			for (let i = 0; i < imgs.length; i++) {
+				if(starindex == i)
+					setStar(changeImg(i))
 				newimgs[i] = imgs[changeImg(i)];
 			}
 			!onChange && console.log('onChange', startIdx, endIdx, newimgs)
 			onChange(startIdx, endIdx, newimgs)
-			starindex == startIdx && setStar(endIdx)
 		}
 		setStartIdx(null);
 		setEndIdx(null);
