@@ -7,13 +7,26 @@ module.exports = {
   styleguideComponents: {
     Wrapper: path.join(__dirname, 'src/styleguide/Wrapper')
   },
+  logger: {
+    // One of: info, debug, warn
+    // Suppress messages
+    info:  message => console.warn(`NOOOOOO: ${message}`),
+    // Override display function
+    warn: message => console.warn(`NOOOOOO: ${message}`)
+  },
   webpackConfig: {
+    devtool: "source-map",
     module: {
       rules: [
         {
           test: /\.jsx?$/,
           exclude: /node_modules/,
-          loader: ['babel-loader']
+          use: {
+            loader: 'babel-loader',
+            options: {
+              plugins: ["@babel/plugin-transform-runtime"]
+            }
+          },
         }, {
           test: /\.css$/,
           use: ["style-loader", "css-loader"]
@@ -48,9 +61,7 @@ module.exports = {
       ]
     }
   },
-  require: [
-    'babel-polyfill'
-  ],
+  require: [],
   getComponentPathLine(componentPath) {
     const name = path.basename(componentPath, '.jsx');
 
